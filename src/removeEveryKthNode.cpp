@@ -18,6 +18,25 @@ struct node {
 	struct node *next;
 };
 
+
 struct node * removeEveryKthNode(struct node *head, int K) {
-	return NULL;
+	struct node* temp, *prev;
+	temp = head;
+	int count = K;
+
+	if (K < 1 || K == 1)
+		return NULL;
+
+	while (temp != NULL){
+		count--;
+		if (count == 0){
+			prev->next = temp->next;
+			count = K;
+		}
+		prev = temp;
+		temp = temp->next;
+
+	}
+
+	return head;
 }
